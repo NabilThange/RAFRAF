@@ -1,0 +1,25 @@
+.main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.headline {
+  font-size: 10rem;
+  font-weight: normal;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}

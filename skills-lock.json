@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "skills": {
+    "SEO Optimizer": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "1ad7ac7488d2050dfd7d64c592a64f86f8ec9a1a871b571544b1a997031c3f38"
+    },
+    "ai-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "35de7c3ba587734c72508d0df02829080aec70fd3fe963318822ed825bb21103"
+    },
+    "geo-fundamentals": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "9947da5cbedf47098493d507756c2ac90207b974d5c39c2400d767083e714712"
+    },
+    "google-official-seo-guide": {
+      "source": "littleben/awesomeagentskills",
+      "sourceType": "github",
+      "computedHash": "795417f9bac75e83cd03e9ffaef54543dee5b4b454f50e83295956c20a91ba16"
+    },
+    "nextjs-seo": {
+      "source": "laguagu/claude-code-nextjs-skills",
+      "sourceType": "github",
+      "computedHash": "803d6f6e0f808265a410020752517c0c70b7aec0329f665e280e6d4f203617fc"
+    },
+    "seo": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "computedHash": "680cc12a17e9308b4592a2751db51615c618993f75362cb8e64207f6355a8c63"
+    },
+    "seo-aeo-best-practices": {
+      "source": "sanity-io/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "9aef7ccbbd821411ce2696816311ca4024f171920c2a74248e464a64dcbd0179"
+    },
+    "seo-audit": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "c3cc327b68800b9e3a221533a488fa62cc4292d0fd42dbdced5a0c5e2ab1df7e"
+    },
+    "seo-fundamentals": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "72650aab70956ffb5ebac7877d6631356900da0ab33e50499312a4b1c3c0aa5d"
+    },
+    "seo-geo": {
+      "source": "resciencelab/opc-skills",
+      "sourceType": "github",
+      "computedHash": "1d38520f453282af8712874c360e3e34a379827f737fb536bd45055e2d60d964"
+    }
+  }
+}

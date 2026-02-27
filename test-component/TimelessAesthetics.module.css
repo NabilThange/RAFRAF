@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+.main {
+    box-sizing: border-box;
+    color: #222;
+    background-color: #ececec;
+    font-family: "Aboreto", system-ui;
+    /* To approximate the fluid font size from the original html/body without altering global root, we can use container query or just clamp values. Or strictly follow the original but localized. 
+       The original html font-size was `calc(100vmax / 1600 * 100)` and body was `0.24rem`.
+       0.24 * 100 / 1600 * 100 = 1.5 vmax.
+       Let's compute: 0.24 rem * (10000vmax / 1600) = 1.5vmax.
+       At 992px: html font-size is 60px. 0.24 * 60 = 14.4px.
+       Let's just set the font-size of the container directly! */
+    font-size: 1.5vmax;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.main * {
+    box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .main {
+        font-size: 14.4px;
+    }
+}
+
+/* ── DESKTOP LAYOUT ── */
+.section {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    height: 100vh;
+    padding: 24px 48px;
+    view-timeline: --section;
+    position: relative;
+    --img-width: 35vmax;
+    --img-height: calc(var(--img-width) * 3 / 4);
+}
+
+.section1 {
+    background-color: #d4e3d2;
+    z-index: 4;
+}
+
+.section2 {
+    background-color: #efcbc5;
+    z-index: 3;
+}
+
+.section3 {
+    background-color: #ebe1c6;
+    z-index: 2;
+}
+
+.section4 {
+    background-color: #cbd0e2;
+    z-index: 1;
+}
+
+.imgBox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 48px;
+    width: var(--img-width);
+    height: var(--img-height);
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: wipe linear both;
+    animation-timeline: --section;
+    --gap: calc((100% - var(--img-height)) / 2);
+    animation-range: exit var(--gap) exit calc(100% - var(--gap));
+}
+
+.content {
+    padding-left: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.desc {
+    line-height: 1.7;
+    text-wrap: balance;
+}
+
+@keyframes wipe {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 100% 0);
+    }
+}
+
+/* ── MOBILE LAYOUT ── */
+@media (max-width: 768px) {
+    .main {
+        font-size: 16px;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: 100svh;
+        padding: 0;
+        gap: 0;
+        --img-width: 100%;
+        --img-height: 55vw;
+    }
+
+    /* IMAGE on top */
+    .imgBox {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        margin: 0;
+        width: 100%;
+        height: 55vw;
+        min-height: 200px;
+        max-height: 50vh;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .img {
+        border-radius: 0 0 12px 12px;
+        --gap: 5%;
+        animation-range: exit var(--gap) exit calc(100% - var(--gap));
+    }
+
+    /* TEXT below image */
+    .content {
+        flex: 1;
+        padding: 36px 28px 28px;
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+        padding-left: 28px;
+    }
+
+    .title {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .desc {
+        font-size: 17px;
+        line-height: 1.7;
+        text-wrap: balance;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+    .imgBox {
+        height: 48vw;
+    }
+
+    .content {
+        padding: 28px 22px 22px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .desc {
+        font-size: 15px;
+    }
+}
