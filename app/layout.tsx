@@ -172,9 +172,14 @@ export default function RootLayout({
                   ],
                   contactPoint: {
                     '@type': 'ContactPoint',
+                    telephone: '+91-9076048473',
                     contactType: 'Sales',
                     availableLanguage: ['English', 'Hindi', 'Arabic'],
                   },
+                  sameAs: [
+                    'https://wa.me/919076048473',
+                    'https://github.com/NabilThange/RAFRAF',
+                  ],
                 },
                 {
                   '@type': 'WebSite',

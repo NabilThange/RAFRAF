@@ -29,26 +29,48 @@ export default function BlogPost() {
                         '@type': 'Article',
                         headline: 'How to Export Fresh Produce from India to UAE: Complete Guide 2026',
                         description: 'Comprehensive guide for B2B exporters on shipping vegetables and fruits from India to UAE markets.',
-                        image: 'https://rafrafinternational.com/blog/export-guide-og.jpg',
+                        image: 'https://www.rafraf.org/og-image.jpg',
                         datePublished: '2026-02-25T08:00:00Z',
-                        dateModified: '2026-02-25T08:00:00Z',
+                        dateModified: '2026-02-28T00:00:00Z',
                         author: {
                             '@type': 'Person',
                             name: 'Umair Khan',
                             jobTitle: 'Founder & CEO',
                             affiliation: {
                                 '@type': 'Organization',
-                                name: 'RAFRAF INTERNATIONAL',
+                                name: 'RafRaf International',
                             },
                         },
                         publisher: {
                             '@type': 'Organization',
-                            name: 'RAFRAF INTERNATIONAL',
+                            name: 'RafRaf International',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://rafrafinternational.com/logo.png',
+                                url: 'https://www.rafraf.org/logo.png',
                             },
                         },
+                    }).replace(/</g, '\\u003c'),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'HowTo',
+                        name: 'How to Export Fresh Produce from India to UAE',
+                        description: 'Step-by-step process for B2B exporters to ship vegetables and fruits from India to UAE wholesale markets.',
+                        totalTime: 'P30D',
+                        estimatedCost: { '@type': 'MonetaryAmount', currency: 'INR', value: '150000-250000' },
+                        step: [
+                            { '@type': 'HowToStep', position: 1, name: 'Obtain Export Licenses and Registration', text: 'Register with DGFT for IEC and APEDA for agricultural exports.' },
+                            { '@type': 'HowToStep', position: 2, name: 'Identify Target Products and Suppliers', text: 'Select Nashik onions, G9 bananas, pomegranates and build a multi-supplier strategy.' },
+                            { '@type': 'HowToStep', position: 3, name: 'Meet Quality and Packaging Standards', text: 'Implement 60mm+ grading and export-grade packaging standards.' },
+                            { '@type': 'HowToStep', position: 4, name: 'Arrange Logistics and Freight', text: 'Partner with a CHA. Use sea freight (7-10 days) or air freight (24-48 hrs).' },
+                            { '@type': 'HowToStep', position: 5, name: 'Complete Export Documentation', text: 'Prepare Commercial Invoice, Packing List, Bill of Lading, Certificate of Origin, Phytosanitary Certificate.' },
+                            { '@type': 'HowToStep', position: 6, name: 'Target Al Aweer Market Dubai', text: 'Build B2B relationships with Al Aweer wholesale distributors — 7,000 tonnes daily throughput.' },
+                            { '@type': 'HowToStep', position: 7, name: 'Establish Consistent Supply', text: 'Start with 2-4 trial shipments, then scale into long-term supply agreements.' },
+                        ],
                     }).replace(/</g, '\\u003c'),
                 }}
             />
@@ -62,6 +84,8 @@ export default function BlogPost() {
                         <time dateTime="2026-02-25">February 25, 2026</time>
                         <span>•</span>
                         <span>8 min read</span>
+                        <span>•</span>
+                        <span>Last updated: <time dateTime="2026-02-28">February 28, 2026</time></span>
                     </div>
 
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">

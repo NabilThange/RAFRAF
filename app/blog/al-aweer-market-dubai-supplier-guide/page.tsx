@@ -28,14 +28,23 @@ export default function BlogPost() {
             headline: 'Al Aweer Market Dubai: Complete Supplier Guide for Fresh Produce Exporters',
             description: 'Comprehensive guide for Indian exporters on supplying to Al Aweer Central Fruit & Vegetable Market in Dubai.',
             datePublished: '2026-02-23T08:00:00Z',
-            dateModified: '2026-02-23T08:00:00Z',
+            dateModified: '2026-02-28T00:00:00Z',
             author: {
               '@type': 'Person',
               name: 'Umair Khan',
+              jobTitle: 'Founder & CEO',
+              affiliation: {
+                '@type': 'Organization',
+                name: 'RafRaf International',
+              },
             },
             publisher: {
               '@type': 'Organization',
-              name: 'RAFRAF INTERNATIONAL',
+              name: 'RafRaf International',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.rafraf.org/logo.png',
+              },
             },
           }).replace(/</g, '\\u003c'),
         }}
@@ -49,6 +58,8 @@ export default function BlogPost() {
             <time dateTime="2026-02-23">February 23, 2026</time>
             <span>•</span>
             <span>7 min read</span>
+            <span>•</span>
+            <span>Last updated: <time dateTime="2026-02-28">February 28, 2026</time></span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
