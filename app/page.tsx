@@ -10,7 +10,7 @@ import { CollectionSection } from "@/components/sections/collection-section";
 import { EditorialSection } from "@/components/sections/editorial-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FooterSection } from "@/components/sections/footer-section";
-import TimelessAesthetics from "@/test-component/TimelessAesthetics";
+import { TimelessAestheticsSection } from "@/components/sections/timeless-aesthetics-section";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -53,7 +53,7 @@ export default function Home() {
       <FamilyButtonDemo />
       <HeroSection />
       <PhilosophySection />
-      <TimelessAesthetics />
+      <TimelessAestheticsSection />
       <CollectionSection />
       {/* <TextImageRevealSection /> */}
       <FeaturedProductsSection />
