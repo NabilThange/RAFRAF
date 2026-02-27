@@ -225,16 +225,16 @@ export function HeroSection() {
               <span className="willem__letter-white">f </span>
               <span className="willem__letter-white is--space">©</span>
             </div>
-            <p className="willem__subtitle">Timeless Design, Crafted with Purpose</p>
+            <p className="willem__subtitle">Premium Indian Produce, Exported with Precision</p>
           </div>
-          
+
 
         </div>
       </div>
 
-      <ContactModal 
-        isOpen={isContactOpen} 
-        onClose={() => setIsContactOpen(false)} 
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
     </section>
   );

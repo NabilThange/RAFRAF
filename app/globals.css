@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -8,7 +7,7 @@
   --color-primary: #f5f5f0;
   --color-secondary: #0A0A0A;
   --color-tertiary: #d4e8c8;
-  
+
   /* Legacy variables for compatibility */
   --background: #f5f5f0;
   --foreground: #0A0A0A;
@@ -50,7 +49,7 @@
   --color-primary: #0A0A0A;
   --color-secondary: #f5f5f0;
   --color-tertiary: #d4e8c8;
-  
+
   /* Legacy variables for compatibility */
   --background: #0A0A0A;
   --foreground: #FAFAFA;
@@ -132,15 +131,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
-  
+
   html {
     scroll-behavior: smooth;
     touch-action: auto;
   }
-  
+
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -148,36 +148,38 @@
     min-height: 100vh;
     touch-action: auto;
   }
-  
+
   /* Ensure all sections allow touch scrolling */
   section {
     touch-action: auto;
   }
-  
+
   /* Fluid typography - scales smoothly across all screen sizes */
   h1 {
     font-size: clamp(2rem, 5vw + 1rem, 4rem);
   }
-  
+
   h2 {
     font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
   }
-  
+
   h3 {
     font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem);
   }
-  
+
   p {
     font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
   }
-  
+
   /* Smooth scrolling with reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
-    
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -190,6 +192,7 @@
     opacity: 0;
     transform: translateY(100%);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -197,8 +200,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes reveal-up {
@@ -206,6 +216,7 @@
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -217,6 +228,7 @@
     opacity: 0;
     transform: translateX(-60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -228,6 +240,7 @@
     opacity: 0;
     transform: translateX(60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -239,6 +252,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -246,16 +260,47 @@
 }
 
 @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  70% {
+    transform: translate(0%, 15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
 }
 
 .animate-float {
@@ -278,12 +323,29 @@
   animation: scale-in 0.6s ease-out forwards;
 }
 
-.animation-delay-100 { animation-delay: 100ms; }
-.animation-delay-200 { animation-delay: 200ms; }
-.animation-delay-300 { animation-delay: 300ms; }
-.animation-delay-400 { animation-delay: 400ms; }
-.animation-delay-500 { animation-delay: 500ms; }
-.animation-delay-600 { animation-delay: 600ms; }
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
 
 .grain-overlay::before {
   content: '';
@@ -371,6 +433,7 @@ html {
 
 /* Optimize animations for mobile */
 @media (max-width: 768px) {
+
   .animate-reveal-up,
   .animate-reveal-left,
   .animate-reveal-right,
@@ -383,7 +446,8 @@ html {
 @media (max-width: 896px) and (orientation: landscape) {
   .h-screen {
     height: 100vh;
-    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
   }
 }
 
@@ -393,6 +457,7 @@ html {
     opacity: 0;
     transform: scale(1.02);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -808,15 +873,13 @@ html {
 /* Feature Carousel animated-cards styles */
 .animated-cards::before {
   @apply pointer-events-none absolute select-none rounded-3xl opacity-0 transition-opacity duration-300 hover:opacity-100;
-  background: radial-gradient(
-    1000px circle at var(--x) var(--y),
-    #c9ee80 0,
-    #eebbe2 10%,
-    #adc0ec 25%,
-    #c9ee80 35%,
-    rgba(255, 255, 255, 0) 50%,
-    transparent 80%
-  );
+  background: radial-gradient(1000px circle at var(--x) var(--y),
+      #c9ee80 0,
+      #eebbe2 10%,
+      #adc0ec 25%,
+      #c9ee80 35%,
+      rgba(255, 255, 255, 0) 50%,
+      transparent 80%);
   z-index: -1;
   content: "";
   inset: -1px;
@@ -875,9 +938,11 @@ svg path {
   0% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+
   50% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
+
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
@@ -932,7 +997,7 @@ svg path {
   background: transparent;
 }
 
-.menu > div {
+.menu>div {
   height: 100%;
   display: flex;
 }
@@ -1040,6 +1105,7 @@ svg path {
 
 /* Mobile-specific menu burger styles */
 @media screen and (max-width: 768px) {
+
   /* Force solid black background on mobile when menu is open */
   .overlay {
     background: #0a0a0a;
@@ -1047,7 +1113,7 @@ svg path {
     transition: opacity 0.6s ease;
     pointer-events: none;
   }
-  
+
   .overlay.menu-active {
     opacity: 1;
   }
@@ -1224,5 +1290,149 @@ svg path {
   .secondary-menu .menu-item a {
     font-size: 20px;
     top: 30px;
+  }
+}
+
+/* ============================================================
+   TIMELESS AESTHETICS SECTION — paste at bottom of globals.css
+   ============================================================ */
+
+
+.ta-root {
+  font-family: "Aboreto", system-ui;
+  color: #222;
+}
+
+/* ── DESKTOP ── */
+.ta-section {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  height: 100vh;
+  padding: 24px 48px;
+  position: relative;
+  --ta-img-width: 35vmax;
+  --ta-img-height: calc(var(--ta-img-width) * 3 / 4);
+  font-size: 1.5vmax;
+}
+
+@media (max-width: 992px) {
+  .ta-section {
+    font-size: 14.4px;
+  }
+}
+
+.ta-img-box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 48px;
+  width: var(--ta-img-width);
+  height: var(--ta-img-height);
+  pointer-events: none;
+  /* starts hidden — JS sets visibility: visible only when ta-root is on screen */
+  visibility: hidden;
+}
+
+.ta-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: clip-path;
+}
+
+.ta-content {
+  padding-left: 10%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ta-title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.ta-desc {
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+
+  .ta-section {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100svh;
+    padding: 0;
+    gap: 0;
+    font-size: 16px;
+    --ta-img-width: 100%;
+    --ta-img-height: 55vw;
+  }
+
+  .ta-img-box {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    margin: 0;
+    width: 100%;
+    height: 55vw;
+    min-height: 200px;
+    max-height: 50vh;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+    /* always visible on mobile — fixed positioning not used */
+    visibility: visible !important;
+  }
+
+  .ta-img {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .ta-content {
+    flex: 1;
+    padding: 36px 28px 28px;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .ta-title {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .ta-desc {
+    font-size: 17px;
+    line-height: 1.7;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .ta-img-box {
+    height: 48vw;
+  }
+
+  .ta-content {
+    padding: 28px 22px 22px;
+  }
+
+  .ta-title {
+    font-size: 30px;
+  }
+
+  .ta-desc {
+    font-size: 15px;
   }
 }
