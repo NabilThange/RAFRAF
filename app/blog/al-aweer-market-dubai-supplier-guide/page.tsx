@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BackButton } from '@/components/back-button'
 
 export const metadata: Metadata = {
-  title: 'Al Aweer Market Dubai: Complete Supplier Guide for Fresh Produce Exporters',
+  title: 'Al Aweer Market Dubai: Supplier Guide for Fresh Produce Exporters',
   description: 'Navigate Dubai\'s largest wholesale produce hub. Market structure, buyer requirements, logistics, entry strategies, and success tips for Indian exporters targeting Al Aweer Market.',
   alternates: {
     canonical: '/blog/al-aweer-market-dubai-supplier-guide',

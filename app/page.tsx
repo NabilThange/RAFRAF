@@ -14,7 +14,7 @@ import { TimelessAestheticsSection } from "@/components/sections/timeless-aesthe
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'RAFRAF INTERNATIONAL - Premium Fresh Produce Exporter India to UAE',
+  title: 'RafRaf International — Fresh Produce Exporter India to UAE',
   description: 'B2B wholesale supplier of fresh vegetables and fruits from India to Gulf markets. Specializing in Nashik onions, G9 Cavendish bananas, and pomegranates.',
   alternates: { canonical: 'https://www.rafraf.org/' },
 };

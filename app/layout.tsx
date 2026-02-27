@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.rafraf.org'),
 
   title: {
-    default: 'RafRaf International - Fresh Produce Exporter India to UAE | B2B Wholesale Supplier',
+    default: 'RafRaf International — Fresh Produce Exporter India to UAE',
     template: '%s | RafRaf International',
   },
 
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.rafraf.org',
     siteName: 'RafRaf International',
-    title: 'RafRaf International - Premium Fresh Produce Exporter India to UAE',
+    title: 'RafRaf International — Fresh Produce Exporter India to UAE',
     description: 'Trusted B2B wholesale supplier of fresh vegetables and fruits from India to Gulf markets. Quality onions, pomegranates, bananas delivered to Al Aweer Dubai.',
     images: [
       {
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'RafRaf International - Fresh Produce Exporter India to UAE',
+    title: 'RafRaf International — Fresh Produce Exporter India to UAE',
     description: 'Leading B2B wholesale supplier of premium vegetables and fruits from India to Gulf markets.',
     images: ['/og-image.jpg'],
   },

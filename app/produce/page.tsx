@@ -4,7 +4,7 @@ import { BackButton } from "@/components/back-button";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Fresh Produce Catalog - Premium Indian Vegetables & Fruits for Export | RafRaf International',
+    title: 'Fresh Produce Catalog — Indian Vegetables & Fruits for Export',
     description: 'Browse RafRaf International\'s B2B wholesale produce catalog. Premium Nashik red onions, G9 Cavendish bananas, pomegranates, green chillies, okra, and more — export-ready for UAE & Gulf markets.',
     alternates: {
         canonical: '/produce',

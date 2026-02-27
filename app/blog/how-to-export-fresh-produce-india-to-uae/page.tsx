@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BackButton } from '@/components/back-button'
 
 export const metadata: Metadata = {
-    title: 'How to Export Fresh Produce from India to UAE: Complete Guide 2026',
+    title: 'How to Export Fresh Produce India to UAE: Complete Guide 2026',
     description: 'Step-by-step guide for exporting vegetables and fruits from India to UAE. Documentation, logistics, Al Aweer Market entry, quality standards, and B2B wholesale strategies.',
     alternates: {
         canonical: '/blog/how-to-export-fresh-produce-india-to-uae',

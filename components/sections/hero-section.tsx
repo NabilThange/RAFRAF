@@ -154,7 +154,7 @@ export function HeroSection() {
                   <Image
                     className="willem__cover-image-extra is--1"
                     src="/images/hero-side-2.png"
-                    alt=""
+                    alt="Fresh Indian produce ready for export to Gulf markets"
                     priority
                     width={400}
                     height={600}
@@ -163,7 +163,7 @@ export function HeroSection() {
                   <Image
                     className="willem__cover-image-extra is--2"
                     src="/images/hero-side-3.png"
-                    alt=""
+                    alt="Indian vegetables and fruits wholesale export batch"
                     priority
                     width={400}
                     height={600}
@@ -172,7 +172,7 @@ export function HeroSection() {
                   <Image
                     className="willem__cover-image-extra is--3"
                     src="/images/hero-side-4.png"
-                    alt=""
+                    alt="Premium fresh produce B2B wholesale supplier RafRaf International"
                     priority
                     width={400}
                     height={600}
@@ -216,15 +216,15 @@ export function HeroSection() {
       <div className="willem-header__content">
         <div className="willem-header__bottom">
           <div className="willem-header__title-wrapper">
-            <div className="willem__h1">
+            <h1 className="willem__h1">
               <span className="willem__letter-white">R</span>
               <span className="willem__letter-white">a</span>
               <span className="willem__letter-white">f</span>
               <span className="willem__letter-white">R</span>
               <span className="willem__letter-white">a</span>
               <span className="willem__letter-white">f </span>
-              <span className="willem__letter-white is--space">©</span>
-            </div>
+              <span className="willem__letter-white is--space">&copy;</span>
+            </h1>
             <p className="willem__subtitle">Premium Indian Produce, Exported with Precision</p>
           </div>
 
