@@ -26,7 +26,7 @@ export function Header() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -58,7 +58,7 @@ export function Header() {
     tlRef.current = tl;
 
     const spanBefore = CSSRulePlugin.getRule("#hamburger span:before");
-    
+
     gsap.set(spanBefore, { background: isScrolled ? "#0a0a0a" : "#fff" });
     gsap.set(".menu", { visibility: "hidden" });
 
@@ -117,7 +117,7 @@ export function Header() {
   const handleToggle = () => {
     const newActiveState = !isActive;
     setIsActive(newActiveState);
-    
+
     // Add/remove class for mobile background and menu items
     if (isMobile) {
       if (overlayRef.current) {
@@ -127,7 +127,7 @@ export function Header() {
           overlayRef.current.classList.remove('menu-active');
         }
       }
-      
+
       if (menuRef.current) {
         if (newActiveState) {
           menuRef.current.classList.add('menu-open');
@@ -136,7 +136,7 @@ export function Header() {
         }
       }
     }
-    
+
     if (tlRef.current) {
       tlRef.current.reversed(!tlRef.current.reversed());
     }
@@ -145,11 +145,11 @@ export function Header() {
   return (
     <>
       {/* Logo */}
-      <Link 
-        href="/" 
+      <Link
+        href="/"
         className={`fixed top-8 left-8 z-50 text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-white"}`}
       >
-        RAFRAF
+        RafRaf
       </Link>
 
       {/* Toggle Button */}
@@ -215,8 +215,8 @@ export function Header() {
               </div>
 
               <div className="menu-item">
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsContactOpen(true);

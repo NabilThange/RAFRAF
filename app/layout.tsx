@@ -14,8 +14,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#FAF9F6' },
+    { media: '(prefers-color-scheme: dark)', color: '#FAF9F6' },
   ],
 }
 
@@ -23,13 +23,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.rafraf.org'),
 
   title: {
-    default: 'RAFRAF INTERNATIONAL - Fresh Produce Exporter India to UAE | B2B Wholesale Supplier',
-    template: '%s | RAFRAF INTERNATIONAL',
+    default: 'RafRaf International - Fresh Produce Exporter India to UAE | B2B Wholesale Supplier',
+    template: '%s | RafRaf International',
   },
 
   description: 'Leading B2B fresh produce exporter from India to UAE, Saudi Arabia, Qatar & Gulf markets. Premium onions, pomegranates, bananas, vegetables wholesale supplier. Al Aweer Market Dubai trusted partner since 2026.',
 
   keywords: [
+    'import export company',
     'fresh produce exporter India',
     'vegetable exporter UAE',
     'Indian onion exporter',
@@ -44,12 +45,20 @@ export const metadata: Metadata = {
     'green chilli exporter Gujarat',
     'Indian vegetables wholesale UAE',
     'fresh fruits exporter Middle East',
+    'rafraf',
+    'RafRaf',
+    'RAFRAF',
+    'rafraf international',
+    'RafRaf International',
     'RAFRAF INTERNATIONAL',
+    'rr',
+    'RR',
+    'RafRaf International',
   ],
 
   authors: [{ name: 'Umair Khan', url: 'https://www.rafraf.org/about' }],
-  creator: 'RAFRAF INTERNATIONAL',
-  publisher: 'RAFRAF INTERNATIONAL',
+  creator: 'RafRaf International',
+  publisher: 'RafRaf International',
 
   robots: {
     index: true,
@@ -71,22 +80,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.rafraf.org',
-    siteName: 'RAFRAF INTERNATIONAL',
-    title: 'RAFRAF INTERNATIONAL - Premium Fresh Produce Exporter India to UAE',
+    siteName: 'RafRaf International',
+    title: 'RafRaf International - Premium Fresh Produce Exporter India to UAE',
     description: 'Trusted B2B wholesale supplier of fresh vegetables and fruits from India to Gulf markets. Quality onions, pomegranates, bananas delivered to Al Aweer Dubai.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'RAFRAF INTERNATIONAL - Fresh Produce Exporter',
+        alt: 'RafRaf International - Fresh Produce Exporter',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'RAFRAF INTERNATIONAL - Fresh Produce Exporter India to UAE',
+    title: 'RafRaf International - Fresh Produce Exporter India to UAE',
     description: 'Leading B2B wholesale supplier of premium vegetables and fruits from India to Gulf markets.',
     images: ['/og-image.jpg'],
   },
@@ -128,7 +137,7 @@ export default function RootLayout({
                 {
                   '@type': 'Organization',
                   '@id': 'https://www.rafraf.org/#organization',
-                  name: 'RAFRAF INTERNATIONAL',
+                  name: 'RafRaf International',
                   url: 'https://www.rafraf.org',
                   logo: {
                     '@type': 'ImageObject',
@@ -171,7 +180,7 @@ export default function RootLayout({
                   '@type': 'WebSite',
                   '@id': 'https://www.rafraf.org/#website',
                   url: 'https://www.rafraf.org',
-                  name: 'RAFRAF INTERNATIONAL',
+                  name: 'RafRaf International',
                   description: 'Fresh produce exporter from India to Gulf markets',
                   publisher: {
                     '@id': 'https://www.rafraf.org/#organization',

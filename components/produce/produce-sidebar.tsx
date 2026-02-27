@@ -14,7 +14,7 @@ export function ProduceSidebar({ categories }: ProduceSidebarProps) {
     <aside className="max-md:hidden col-span-4 h-screen sticky top-0 p-6 md:p-8 lg:p-12 pt-20 md:pt-36 flex flex-col justify-between">
       <div>
         <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 cursor-pointer mt-[50px]">RAFRAF</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 cursor-pointer mt-[50px]">RafRaf</h1>
         </Link>
         <p className="italic tracking-tighter text-base">Fresh. Quality. Reliable.</p>
         <div className="mt-5 text-base leading-tight mt-[8px]">

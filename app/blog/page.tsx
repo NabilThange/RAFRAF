@@ -71,7 +71,7 @@ export default function BlogPage() {
             Fresh Produce Export Insights
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            Expert guidance on agricultural exports, Gulf market trends, and B2B wholesale strategies from RAFRAF INTERNATIONAL.
+            Expert guidance on agricultural exports, Gulf market trends, and B2B wholesale strategies from RafRaf International.
           </p>
         </section>
 
@@ -89,7 +89,7 @@ export default function BlogPage() {
                   <span>•</span>
                   <span>{post.readTime}</span>
                 </div>
-                
+
                 <h2 className="text-xl font-bold mb-3 line-clamp-2">
                   <Link
                     href={`/blog/${post.slug}`}
@@ -98,11 +98,11 @@ export default function BlogPage() {
                     {post.title}
                   </Link>
                 </h2>
-                
+
                 <p className="text-muted-foreground mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <time className="text-sm text-muted-foreground">
                     {new Date(post.date).toLocaleDateString('en-US', {
@@ -111,7 +111,7 @@ export default function BlogPage() {
                       day: 'numeric',
                     })}
                   </time>
-                  
+
                   <Link
                     href={`/blog/${post.slug}`}
                     className="text-primary font-semibold hover:underline"

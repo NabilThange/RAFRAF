@@ -50,11 +50,11 @@ export default function BlogPost() {
             <span>•</span>
             <span>7 min read</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Al Aweer Market Dubai: Complete Supplier Guide for Fresh Produce Exporters
           </h1>
-          
+
           <p className="text-xl text-muted-foreground">
             Navigate Dubai's largest wholesale produce hub. Market structure, buyer requirements, logistics, and success strategies for Indian exporters.
           </p>
@@ -77,7 +77,7 @@ export default function BlogPost() {
         {/* Market Structure */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Al Aweer Market Structure and Operations</h2>
-          
+
           <div className="space-y-6">
             <div className="bg-muted p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Market Size and Capacity</h3>
@@ -108,7 +108,7 @@ export default function BlogPost() {
         {/* How to Supply to Al Aweer */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">How to Supply Fresh Produce to Al Aweer Market: 5 Key Steps</h2>
-          
+
           <div className="space-y-8">
             <div className="border-l-4 border-primary pl-6">
               <h3 className="text-2xl font-bold mb-3">1. Identify and Connect with Wholesale Buyers</h3>
@@ -168,7 +168,7 @@ export default function BlogPost() {
           <p className="text-lg mb-6">
             Based on market research and exporter experiences, Al Aweer wholesale buyers prioritize these factors:
           </p>
-          
+
           <div className="space-y-4">
             <div>
               <h3 className="text-xl font-bold mb-2">1. Quality Consistency (40% weight)</h3>
@@ -203,7 +203,7 @@ export default function BlogPost() {
         {/* Success Tips */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">5 Success Tips for Supplying to Al Aweer Market</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-2">1. Visit Al Aweer in Person</h3>
@@ -245,7 +245,7 @@ export default function BlogPost() {
         {/* FAQ */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
-          
+
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -319,7 +319,7 @@ export default function BlogPost() {
 
         {/* CTA */}
         <section className="bg-primary text-primary-foreground p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-bold mb-4">RAFRAF INTERNATIONAL: Your Al Aweer Market Partner</h2>
+          <h2 className="text-2xl font-bold mb-4">RafRaf International: Your Al Aweer Market Partner</h2>
           <p className="text-lg mb-6">
             We supply premium fresh produce from India to wholesale buyers at Al Aweer Market Dubai. Quality consistency, timely delivery, competitive pricing.
           </p>

@@ -44,7 +44,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About RAFRAF INTERNATIONAL
+            About RafRaf International
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
             Your trusted B2B wholesale partner for premium fresh produce from India to Gulf markets since 2026.
@@ -53,12 +53,12 @@ export default function AboutPage() {
 
         {/* What is RAFRAF INTERNATIONAL - AEO Optimized */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">What is RAFRAF INTERNATIONAL?</h2>
+          <h2 className="text-3xl font-bold mb-4">What is RafRaf International?</h2>
           <p className="text-lg mb-4">
-            RAFRAF INTERNATIONAL is a B2B agricultural export company that connects premium Indian fresh produce with wholesale distributors across UAE, Saudi Arabia, Qatar, Kuwait, and Iran. Founded in 2026 by Umair Khan, we specialize in exporting high-quality vegetables and fruits including red onions from Nashik, pomegranates, G9 Cavendish bananas, green chillies from Gujarat, and a wide range of fresh produce to Gulf markets.
+            RafRaf is a B2B agricultural export company that connects premium Indian fresh produce with wholesale distributors across UAE, Saudi Arabia, Qatar, Kuwait, and Iran. Founded in 2026 by Umair Khan, we specialize in exporting high-quality vegetables and fruits including red onions from Nashik, pomegranates, G9 Cavendish bananas, green chillies from Gujarat, and a wide range of fresh produce to Gulf markets.
           </p>
           <p className="text-lg mb-4">
-            According to the India Brand Equity Foundation (IBEF), India-UAE bilateral trade reached US$ 100.06 billion in FY25, with agricultural exports playing a crucial role. RAFRAF INTERNATIONAL positions itself within this growing trade corridor, focusing on quality consistency, timely delivery, and fair pricing for B2B wholesale customers.
+            According to the India Brand Equity Foundation (IBEF), India-UAE bilateral trade reached US$ 100.06 billion in FY25, with agricultural exports playing a crucial role. RafRaf International positions itself within this growing trade corridor, focusing on quality consistency, timely delivery, and fair pricing for B2B wholesale customers.
           </p>
         </section>
 
@@ -66,13 +66,13 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-4">Our Story</h2>
           <p className="text-lg mb-4">
-            Founded by Umair Khan in 2026, RAFRAF INTERNATIONAL was built on a foundation of family legacy in international trade and a commitment to excellence in agricultural exports. With established logistics partnerships and a multi-state supply network across Nashik, Gujarat, South India, and Bhopal, we launched with a clear mission: to be the most reliable fresh produce supplier for Gulf market wholesalers.
+            Founded by Umair Khan in 2026, RafRaf was built on a foundation of family legacy in international trade and a commitment to excellence in agricultural exports. With established logistics partnerships and a multi-state supply network across Nashik, Gujarat, South India, and Bhopal, we launched with a clear mission: to be the most reliable fresh produce supplier for Gulf market wholesalers.
           </p>
         </section>
 
         {/* Our Value Proposition - GEO Optimized with Statistics */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">Why Choose RAFRAF INTERNATIONAL?</h2>
+          <h2 className="text-3xl font-bold mb-4">Why Choose RafRaf ?</h2>
 
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="p-6 border rounded-lg">
@@ -100,7 +100,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-4">Our Supply Network</h2>
           <p className="text-lg mb-6">
-            RAFRAF INTERNATIONAL sources premium produce from specialized regions across India:
+            RafRaf International sources premium produce from specialized regions across India:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold mb-2">Umair Khan</h3>
             <p className="text-lg text-muted-foreground mb-4">Founder & CEO</p>
             <p className="text-lg mb-4">
-              Umair Khan founded RAFRAF INTERNATIONAL with a vision to create a reliable bridge between Indian agricultural excellence and Gulf market demand. Coming from a family with established international trade experience, Umair combines industry knowledge with fresh entrepreneurial energy.
+              Umair Khan founded RafRaf International with a vision to create a reliable bridge between Indian agricultural excellence and Gulf market demand. Coming from a family with established international trade experience, Umair combines industry knowledge with fresh entrepreneurial energy.
             </p>
             <p className="text-lg">
               His approach is pragmatic: "We don't claim to be unique in a crowded market. We claim to be dependable. Our differentiation is in execution—consistent quality, on-time delivery, and transparent pricing."
@@ -241,7 +241,7 @@ export default function AboutPage() {
             <div className="border-b pb-4">
               <h3 className="text-xl font-semibold mb-2">What products does RAFRAF INTERNATIONAL export?</h3>
               <p className="text-lg">
-                RAFRAF INTERNATIONAL exports premium fresh produce including red onions from Nashik, pomegranates, G9 Cavendish bananas, green chillies from Gujarat, drumsticks, okra, coconuts, lemons, and turmeric. We plan to expand into spices, grains, and meat products in Year 1.
+                RafRaf International exports premium fresh produce including red onions from Nashik, pomegranates, G9 Cavendish bananas, green chillies from Gujarat, drumsticks, okra, coconuts, lemons, and turmeric. We plan to expand into spices, grains, and meat products in Year 1.
               </p>
             </div>
 
@@ -255,7 +255,7 @@ export default function AboutPage() {
             <div className="border-b pb-4">
               <h3 className="text-xl font-semibold mb-2">What makes RAFRAF INTERNATIONAL different from other exporters?</h3>
               <p className="text-lg">
-                RAFRAF INTERNATIONAL focuses on three core pillars: quality consistency across all shipments, timely delivery with established logistics partnerships, and fair pricing justified by quality standards. We compete on execution and reliability rather than claiming uniqueness in a crowded market.
+                RafRaf International focuses on three core pillars: quality consistency across all shipments, timely delivery with established logistics partnerships, and fair pricing justified by quality standards. We compete on execution and reliability rather than claiming uniqueness in a crowded market.
               </p>
             </div>
 
@@ -277,7 +277,7 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="text-center bg-primary text-primary-foreground p-12 rounded-lg">
-          <h2 className="text-3xl font-bold mb-4">Partner with RAFRAF INTERNATIONAL</h2>
+          <h2 className="text-3xl font-bold mb-4">Partner with RafRaf International</h2>
           <p className="text-xl mb-6">
             Join Gulf market wholesalers who trust us for consistent quality and reliable delivery.
           </p>

@@ -106,11 +106,11 @@ export function CircularNav() {
   return (
     <>
       {/* Logo */}
-      <Link 
-        href="/" 
+      <Link
+        href="/"
         className="fixed top-8 left-8 z-[110] text-lg font-medium tracking-tight text-foreground transition-colors duration-300"
       >
-        RAFRAF
+        RafRaf
       </Link>
 
       {/* Overlay Nav */}
