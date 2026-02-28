@@ -87,9 +87,9 @@ export const metadata: Metadata = {
     description: 'Trusted B2B wholesale supplier of fresh vegetables and fruits from India to Gulf markets. Quality onions, pomegranates, bananas delivered to Al Aweer Dubai.',
     images: [
       {
-        url: '/images/hero-landscape.png',
-        width: 1920,
-        height: 1080,
+        url: '/home.png',
+        width: 1200,
+        height: 630,
         alt: 'RafRaf International - Fresh Produce Exporter',
       },
     ],
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RafRaf International — Fresh Produce Exporter India to UAE',
     description: 'Leading B2B wholesale supplier of premium vegetables and fruits from India to Gulf markets.',
-    images: ['/images/hero-landscape.png'],
+    images: ['/home.png'],
   },
 
   verification: {
