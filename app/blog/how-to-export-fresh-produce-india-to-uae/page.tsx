@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BackButton } from '@/components/back-button'
+import { ContactCtaButton } from '@/components/contact-cta-button'
 
 export const metadata: Metadata = {
     title: 'How to Export Fresh Produce India to UAE: Complete Guide 2026',
@@ -368,12 +369,10 @@ export default function BlogPost() {
                     <p className="text-lg mb-6">
                         Looking for a reliable fresh produce supplier for your UAE wholesale business? RafRaf International offers consistent quality, timely delivery, and fair pricing.
                     </p>
-                    <a
-                        href="/contact"
-                        className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-                    >
-                        Contact Us for B2B Wholesale Inquiries
-                    </a>
+                    <ContactCtaButton
+                        label="Contact Us for B2B Wholesale Inquiries"
+                        className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer"
+                    />
                 </section>
 
                 {/* Author Bio */}

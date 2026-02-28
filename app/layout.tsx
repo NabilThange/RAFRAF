@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Funnel_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SmoothScrollProvider } from '@/components/providers/smooth-scroll-provider'
+import { CircularNav } from '@/components/circular-nav'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
@@ -205,6 +206,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${funnelSans.variable} font-sans antialiased`}>
         <SmoothScrollProvider>
+          <CircularNav />
           {children}
         </SmoothScrollProvider>
         <Analytics />

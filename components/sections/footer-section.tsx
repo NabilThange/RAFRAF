@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { ContactCtaButton } from "@/components/contact-cta-button";
 
 export function FooterSection() {
   return (
@@ -28,15 +29,10 @@ export function FooterSection() {
           >
             Blog
           </Link>
-          <button
-            onClick={() => {
-              const event = new CustomEvent('openContactModal');
-              window.dispatchEvent(event);
-            }}
-            className="text-foreground hover:text-muted-foreground transition-colors font-medium"
-          >
-            Contact
-          </button>
+          <ContactCtaButton
+            label="Contact"
+            className="text-foreground hover:text-muted-foreground transition-colors font-medium cursor-pointer"
+          />
           <Link
             href="mailto:rafrafinternational786@gmail.com"
             className="text-foreground hover:text-muted-foreground transition-colors font-medium inline-flex items-center gap-1"

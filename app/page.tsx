@@ -1,11 +1,7 @@
-import { CircularNav } from "@/components/circular-nav";
 import { FamilyButtonDemo } from "@/components/family-button-demo";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PhilosophySection } from "@/components/sections/philosophy-section";
-import { TextImageRevealSection } from "@/components/sections/text-image-reveal-section";
 import { FeaturedProductsSection } from "@/components/sections/featured-products-section";
-import { TechnologySection } from "@/components/sections/technology-section";
-import { GallerySection } from "@/components/sections/gallery-section";
 import { CollectionSection } from "@/components/sections/collection-section";
 import { EditorialSection } from "@/components/sections/editorial-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
@@ -49,16 +45,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
       />
-      <CircularNav />
       <FamilyButtonDemo />
       <HeroSection />
       <PhilosophySection />
-      <TimelessAestheticsSection />
+
       <CollectionSection />
-      {/* <TextImageRevealSection /> */}
+      <TimelessAestheticsSection />
       <FeaturedProductsSection />
-      {/* <TechnologySection /> */}
-      {/* <GallerySection /> */}
       <EditorialSection />
       <TestimonialsSection />
       <FooterSection />

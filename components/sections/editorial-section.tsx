@@ -65,12 +65,14 @@ export function EditorialSection() {
       </div>
 
       {/* Full-width Video with Parallax */}
-      <div ref={videoRef} className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden">
+      <div ref={videoRef} className="relative aspect-[3/4] sm:aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden">
         <video
+          muted
           autoPlay
           loop
-          muted
           playsInline
+          poster="/images/onion.jpeg"
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
           style={{
             transform: `scale(1.15) translate3d(0, ${parallaxY}px, 0) translateZ(0)`,

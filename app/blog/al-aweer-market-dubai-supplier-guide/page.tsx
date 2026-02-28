@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BackButton } from '@/components/back-button'
+import { ContactCtaButton } from '@/components/contact-cta-button'
 
 export const metadata: Metadata = {
   title: 'Al Aweer Market Dubai: Supplier Guide for Fresh Produce Exporters',
@@ -334,12 +335,10 @@ export default function BlogPost() {
           <p className="text-lg mb-6">
             We supply premium fresh produce from India to wholesale buyers at Al Aweer Market Dubai. Quality consistency, timely delivery, competitive pricing.
           </p>
-          <a
-            href="/contact"
-            className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Partner with Us
-          </a>
+          <ContactCtaButton
+            label="Partner with Us"
+            className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer"
+          />
         </section>
       </article>
     </div>

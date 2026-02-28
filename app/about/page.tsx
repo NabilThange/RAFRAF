@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BackButton } from '@/components/back-button'
+import { ContactCtaButton } from '@/components/contact-cta-button'
 
 export const metadata: Metadata = {
   title: 'About Us - Leading Fresh Produce Exporter from India to UAE',
@@ -281,12 +282,10 @@ export default function AboutPage() {
           <p className="text-xl mb-6">
             Join Gulf market wholesalers who trust us for consistent quality and reliable delivery.
           </p>
-          <a
-            href="/contact"
-            className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Contact Us for Wholesale Inquiries
-          </a>
+          <ContactCtaButton
+            label="Contact Us for Wholesale Inquiries"
+            className="inline-block bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer"
+          />
         </section>
       </main>
     </div>

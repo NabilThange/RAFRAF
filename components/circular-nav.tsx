@@ -101,6 +101,13 @@ export function CircularNav() {
     };
   }, []);
 
+  // Listen for global openContactModal events (dispatched by blog pages, footer, etc.)
+  useEffect(() => {
+    const handler = () => setIsContactOpen(true);
+    window.addEventListener("openContactModal", handler);
+    return () => window.removeEventListener("openContactModal", handler);
+  }, []);
+
   const navVisible = isOpen || isAnimating;
 
   return (
@@ -108,7 +115,8 @@ export function CircularNav() {
       {/* Logo */}
       <Link
         href="/"
-        className="fixed top-8 left-8 z-[110] text-lg font-medium tracking-tight text-foreground transition-colors duration-300"
+        className="fixed top-8 left-8 z-[110] text-lg font-medium tracking-tight text-white transition-colors duration-300"
+        style={{ mixBlendMode: "difference" }}
       >
         RafRaf
       </Link>
