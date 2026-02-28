@@ -91,7 +91,7 @@ export function EditorialSection() {
             WebkitBackfaceVisibility: 'hidden',
             willChange: 'transform',
           }}
-          src="/farm.mp4"
+          src="https://www.youtube.com/embed/fz-s863ET7Q?autoplay=1&mute=1&loop=1&playlist=fz-s863ET7Q&controls=0&modestbranding=1&showinfo=0&rel=0"
         />
       </div>
 
