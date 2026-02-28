@@ -8,15 +8,49 @@ import Image from "next/image"
 import whatsappLogo from "@/public/whatsapp-logo.png"
 import gmailLogo from "@/public/gmail-logo.png"
 
+import { usePathname } from "next/navigation"
+import { useEffect } from "react"
+
 export function FamilyButtonDemo() {
+  const [isVisible, setIsVisible] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // If we're on the homepage, hide the button when we're in the hero section (top 80vh)
+      if (pathname === "/") {
+        setIsVisible(window.scrollY > window.innerHeight * 0.8);
+      } else {
+        // Always show on other pages
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to set initial state
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
+
   return (
-    <div className="fixed bottom-6 right-6 z-40">
-      <FamilyButton>
-        <MusicPlayerExample />
-      </FamilyButton>
-    </div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          className="fixed bottom-6 right-6 z-40"
+        >
+          <FamilyButton>
+            <MusicPlayerExample />
+          </FamilyButton>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
+
 
 let tabs = [
   { id: 0, label: "Whatsapp" },

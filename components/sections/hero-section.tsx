@@ -264,7 +264,7 @@ export function HeroSection() {
               <span className="willem__letter-white">f </span>
               {/* <span className="willem__letter-white is--space">&copy;</span> */}
             </h1>
-            <p className="willem__subtitle mb-8">Premium Indian Produce, Exported with Precision</p>
+            <p className="willem__subtitle mb-12">Premium Indian Produce, Exported with Precision</p>
 
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
@@ -275,7 +275,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/produce"
-                className="hero-cta-button px-[22px] py-[10px] rounded-full border border-white/30 text-white text-[12.8px] uppercase tracking-[0.05em] font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 active:scale-95 whitespace-nowrap"
+                className="hero-cta-button px-[22px] py-[10px] rounded-full border border-white/50 text-white text-[12.8px] uppercase tracking-[0.05em] font-semibold backdrop-blur-md hover:bg-white/10 transition-all duration-300 active:scale-95 whitespace-nowrap"
               >
                 Explore Products ↗
               </Link>
