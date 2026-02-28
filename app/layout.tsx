@@ -4,6 +4,7 @@ import { Inter, Funnel_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SmoothScrollProvider } from '@/components/providers/smooth-scroll-provider'
 import { CircularNav } from '@/components/circular-nav'
+import { ScrollProgressBar } from '@/components/scroll-progress-bar'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
@@ -15,8 +16,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FAF9F6' },
-    { media: '(prefers-color-scheme: dark)', color: '#FAF9F6' },
+    { media: '(prefers-color-scheme: light)', color: '#f5f5f0' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
   ],
 }
 
@@ -86,7 +87,7 @@ export const metadata: Metadata = {
     description: 'Trusted B2B wholesale supplier of fresh vegetables and fruits from India to Gulf markets. Quality onions, pomegranates, bananas delivered to Al Aweer Dubai.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/hero-landscape.png',
         width: 1200,
         height: 630,
         alt: 'RafRaf International - Fresh Produce Exporter',
@@ -98,7 +99,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RafRaf International — Fresh Produce Exporter India to UAE',
     description: 'Leading B2B wholesale supplier of premium vegetables and fruits from India to Gulf markets.',
-    images: ['/og-image.jpg'],
+    images: ['/hero-landscape.png'],
   },
 
   verification: {
@@ -206,6 +207,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${funnelSans.variable} font-sans antialiased`}>
         <SmoothScrollProvider>
+          <ScrollProgressBar />
           <CircularNav />
           {children}
         </SmoothScrollProvider>

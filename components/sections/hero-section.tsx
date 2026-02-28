@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ContactModal } from "@/components/contact-modal";
 
@@ -25,6 +26,8 @@ export function HeroSection() {
     const coverImageExtra = [...loader.querySelectorAll<Element>(".willem__cover-image-extra")];
     const headerLetter = [...container.querySelectorAll<Element>(".willem__letter-white")];
     const subtitleText = container.querySelector(".willem__subtitle");
+    const sideText = container.querySelector(".hero-side-text");
+    const buttons = [...container.querySelectorAll<Element>(".hero-cta-button")];
     const contactCircle = container.querySelector(".willem__contact-circle");
 
     // Guard: don't run if key elements are missing
@@ -40,6 +43,8 @@ export function HeroSection() {
     gsap.set(loadingLetter, { yPercent: 100 });
     gsap.set(headerLetter, { yPercent: 100 });
     if (subtitleText) gsap.set(subtitleText, { opacity: 0, y: 20 });
+    if (sideText) gsap.set(sideText, { opacity: 0, x: -20 });
+    if (buttons.length) gsap.set(buttons, { opacity: 0, y: 20 });
     if (contactCircle) gsap.set(contactCircle, { opacity: 0, scale: 0.8 });
 
     // Animate loading letters
@@ -114,6 +119,24 @@ export function HeroSection() {
       );
     }
 
+    // Animate side text
+    if (sideText) {
+      tl.to(
+        sideText,
+        { opacity: 0.7, x: 0, duration: 1.5, ease: "expo.out" },
+        "<"
+      );
+    }
+
+    // Animate CTA buttons
+    if (buttons.length) {
+      tl.to(
+        buttons,
+        { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "expo.out" },
+        "< 0.2"
+      );
+    }
+
     // Animate contact circle
     if (contactCircle) {
       tl.to(
@@ -126,6 +149,8 @@ export function HeroSection() {
     // Clear all transforms after animation completes
     tl.set(headerLetter, { clearProps: "all" });
     if (subtitleText) tl.set(subtitleText, { clearProps: "all" });
+    if (sideText) tl.set(sideText, { clearProps: "opacity,transform" });
+    if (buttons.length) tl.set(buttons, { clearProps: "all" });
     if (contactCircle) tl.set(contactCircle, { clearProps: "all" });
 
     // Hide the loader overlay (text) but keep the image
@@ -199,6 +224,20 @@ export function HeroSection() {
         </div>
       </div>
 
+      {/* Vertical Side Text */}
+      <div
+        className="hero-side-text absolute left-6 top-1/2 z-20 whitespace-nowrap"
+        style={{
+          writingMode: 'vertical-rl',
+          transform: 'rotate(180deg) translateY(50%)',
+          color: 'white'
+        }}
+      >
+        <span className="text-[10.4px] uppercase tracking-[0.15em] font-medium opacity-70">
+          EST. 2026 — PREMIUM EXPORTS
+        </span>
+      </div>
+
       {/* Background image that stays after animation */}
       <div className="willem-background-image">
         <Image
@@ -223,12 +262,25 @@ export function HeroSection() {
               <span className="willem__letter-white">R</span>
               <span className="willem__letter-white">a</span>
               <span className="willem__letter-white">f </span>
-              <span className="willem__letter-white is--space">&copy;</span>
+              {/* <span className="willem__letter-white is--space">&copy;</span> */}
             </h1>
-            <p className="willem__subtitle">Premium Indian Produce, Exported with Precision</p>
+            <p className="willem__subtitle mb-8">Premium Indian Produce, Exported with Precision</p>
+
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Link
+                href="/about"
+                className="hero-cta-button px-[22px] py-[10px] rounded-full bg-white text-black text-[12.8px] uppercase tracking-[0.05em] font-semibold hover:bg-neutral-200 transition-all duration-300 active:scale-95 whitespace-nowrap border border-white"
+              >
+                Who We Are ↗
+              </Link>
+              <Link
+                href="/produce"
+                className="hero-cta-button px-[22px] py-[10px] rounded-full border border-white/30 text-white text-[12.8px] uppercase tracking-[0.05em] font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 active:scale-95 whitespace-nowrap"
+              >
+                Explore Products ↗
+              </Link>
+            </div>
           </div>
-
-
         </div>
       </div>
 

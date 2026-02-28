@@ -10,14 +10,15 @@ const specs = [
 ];
 
 export function EditorialSection() {
-  const videoRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoElRef = useRef<HTMLVideoElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const rafRef = useRef<number | null>(null);
 
   const updateParallax = useCallback(() => {
-    if (!videoRef.current) return;
+    if (!containerRef.current) return;
 
-    const rect = videoRef.current.getBoundingClientRect();
+    const rect = containerRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
     // Calculate when video enters and exits viewport
@@ -32,6 +33,14 @@ export function EditorialSection() {
   }, []);
 
   useEffect(() => {
+    // Fix for mobile autoplay (specifically iOS Safari)
+    if (videoElRef.current) {
+      videoElRef.current.muted = true;
+      videoElRef.current.play().catch(() => {
+        console.log("Autoplay blocked or failed");
+      });
+    }
+
     const handleScroll = () => {
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
@@ -65,8 +74,9 @@ export function EditorialSection() {
       </div>
 
       {/* Full-width Video with Parallax */}
-      <div ref={videoRef} className="relative aspect-[3/4] sm:aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden">
+      <div ref={containerRef} className="relative aspect-[3/4] sm:aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden">
         <video
+          ref={videoElRef}
           muted
           autoPlay
           loop

@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ContactModal } from "./contact-modal";
+import { hapticFeedback, HAPTIC_PATTERNS } from "@/lib/haptics";
 import "./circular-nav.css";
 
 const NAV_ITEMS = [
@@ -13,7 +15,9 @@ const NAV_ITEMS = [
 ];
 
 export function CircularNav() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [radius, setRadius] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -70,6 +74,7 @@ export function CircularNav() {
   const toggle = () => {
     if (isAnimating) return;
     setIsAnimating(true);
+    hapticFeedback(HAPTIC_PATTERNS.LIGHT);
 
     if (!isOpen) {
       setIsOpen(true);
@@ -83,6 +88,7 @@ export function CircularNav() {
   };
 
   const handleNavClick = (href: string, isRoute: boolean) => {
+    hapticFeedback(HAPTIC_PATTERNS.SUBTLE);
     if (href === "#contact") {
       setIsContactOpen(true);
       toggle();
@@ -94,6 +100,23 @@ export function CircularNav() {
       toggle();
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // If we're on the homepage, track if we're in the hero section (roughly top 100vh)
+      if (pathname === "/") {
+        setIsAtTop(window.scrollY < window.innerHeight * 0.8);
+      } else {
+        setIsAtTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to set initial state
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
 
   useEffect(() => {
     return () => {
@@ -109,17 +132,24 @@ export function CircularNav() {
   }, []);
 
   const navVisible = isOpen || isAnimating;
+  const hideLogo = pathname.startsWith("/produce") ||
+    pathname.startsWith("/about") ||
+    pathname.startsWith("/blog");
 
   return (
     <>
       {/* Logo */}
-      <Link
-        href="/"
-        className="fixed top-8 left-8 z-[110] text-lg font-medium tracking-tight text-white transition-colors duration-300"
-        style={{ mixBlendMode: "difference" }}
-      >
-        RafRaf
-      </Link>
+      {!hideLogo && (
+        <Link
+          href="/"
+          className="fixed top-8 left-8 z-[110] text-lg font-medium tracking-tight text-white transition-all duration-500"
+          style={{
+            mixBlendMode: (pathname === "/" && isAtTop) ? "normal" : "difference",
+          }}
+        >
+          RafRaf
+        </Link>
+      )}
 
       {/* Overlay Nav */}
       <nav

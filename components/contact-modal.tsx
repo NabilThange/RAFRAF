@@ -3,6 +3,7 @@
 import { X, MessageCircle, Mail, FileText } from "lucide-react";
 import { useEffect } from "react";
 import Link from "next/link";
+import { hapticFeedback, HAPTIC_PATTERNS } from "@/lib/haptics";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -63,7 +64,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h2 className="text-xl font-semibold">Get in Touch</h2>
             <button
-              onClick={onClose}
+              onClick={() => {
+                hapticFeedback(HAPTIC_PATTERNS.LIGHT);
+                onClose();
+              }}
               className="p-2 -m-2 hover:bg-secondary rounded-full transition-colors"
               aria-label="Close modal"
             >
@@ -76,13 +80,16 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {contacts.map((contact) => {
               const Icon = contact.icon;
               const Component = contact.isLink ? "a" : Link;
-              
+
               return (
                 <Component
                   key={contact.name}
                   href={contact.url}
                   {...(contact.isLink && { target: "_blank", rel: "noopener noreferrer" })}
-                  onClick={() => !contact.isLink && onClose()}
+                  onClick={() => {
+                    hapticFeedback(HAPTIC_PATTERNS.SUBTLE);
+                    if (!contact.isLink) onClose();
+                  }}
                   className={`flex items-center gap-4 p-4 rounded-2xl transition-all duration-200 ${contact.color} active:scale-95`}
                 >
                   <div className="flex-shrink-0">
