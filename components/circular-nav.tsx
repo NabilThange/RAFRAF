@@ -7,7 +7,7 @@ import "./circular-nav.css";
 
 const NAV_ITEMS = [
   { label: "Get Quote", href: "/produce", isRoute: true },
-  { label: "Gallery", href: "#gallery", isRoute: false },
+  { label: "Produce", href: "/produce", isRoute: true },
   { label: "About", href: "/about", isRoute: true },
   { label: "Contact", href: "#contact", isRoute: false },
 ];

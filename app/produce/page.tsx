@@ -51,18 +51,6 @@ const featuredProduce = [
     },
     {
         id: 3,
-        title: "G9 Cavendish Bananas",
-        handle: "cavendish-bananas",
-        description: "Premium G9 Cavendish bananas from South India. Perfect for export with excellent shelf life and consistent ripening.",
-        shortDescription: "G9 grade, extended shelf life",
-        tags: ["South India", "Premium", "Export Ready"],
-        featuredImage: {
-            url: "/images/banana.jpeg",
-            altText: "G9 Cavendish Bananas"
-        }
-    },
-    {
-        id: 4,
         title: "Pomegranates",
         handle: "pomegranates",
         description: "Fresh pomegranates from Nashik region. High-quality fruit with superior taste and extended shelf life for Gulf markets.",
@@ -71,6 +59,18 @@ const featuredProduce = [
         featuredImage: {
             url: "/images/pomegranate.jpg",
             altText: "Pomegranates"
+        }
+    },
+    {
+        id: 4,
+        title: "G9 Cavendish Bananas",
+        handle: "cavendish-bananas",
+        description: "Premium G9 Cavendish bananas from South India. Perfect for export with excellent shelf life and consistent ripening.",
+        shortDescription: "G9 grade, extended shelf life",
+        tags: ["South India", "Premium", "Export Ready"],
+        featuredImage: {
+            url: "/images/banana.jpeg",
+            altText: "G9 Cavendish Bananas"
         }
     },
     {
@@ -87,30 +87,6 @@ const featuredProduce = [
     },
     {
         id: 6,
-        title: "Black Grapes",
-        handle: "black-grapes",
-        description: "Fresh black grapes from Nashik region. Consistent quality and fair pricing for wholesale distribution.",
-        shortDescription: "Consistent quality, fair wholesale pricing",
-        tags: ["Nashik", "Grade A", "Fresh"],
-        featuredImage: {
-            url: "/images/black_grapes.jpg",
-            altText: "Black Grapes"
-        }
-    },
-    {
-        id: 7,
-        title: "Green Grapes",
-        handle: "green-grapes",
-        description: "Premium green grapes from Nashik. Crisp texture and excellent taste for international markets.",
-        shortDescription: "Crisp texture, premium international grade",
-        tags: ["Nashik", "Grade A", "Premium"],
-        featuredImage: {
-            url: "/images/green_grapes.jpg",
-            altText: "Green Grapes"
-        }
-    },
-    {
-        id: 8,
         title: "G4 Green Chillies",
         handle: "green-chillies",
         description: "Fresh G4 Gauri green chillies from Gujarat. High-quality produce with consistent flavor profile for export.",
@@ -122,19 +98,7 @@ const featuredProduce = [
         }
     },
     {
-        id: 9,
-        title: "Fresh Drumsticks",
-        handle: "fresh-drumsticks",
-        description: "Tender drumsticks from South India. Nutritious and perfect for health-conscious markets with reliable supply.",
-        shortDescription: "Tender, nutritious, reliable supply",
-        tags: ["South India", "Grade A", "Fresh"],
-        featuredImage: {
-            url: "/images/drumsticks.webp",
-            altText: "Fresh Drumsticks"
-        }
-    },
-    {
-        id: 10,
+        id: 7,
         title: "Fresh Lemons",
         handle: "fresh-lemons",
         description: "Premium lemons from Jalgaon region. Juicy and aromatic, perfect for export with consistent quality.",
@@ -146,7 +110,19 @@ const featuredProduce = [
         }
     },
     {
-        id: 11,
+        id: 8,
+        title: "Fresh Drumsticks",
+        handle: "fresh-drumsticks",
+        description: "Tender drumsticks from South India. Nutritious and perfect for health-conscious markets with reliable supply.",
+        shortDescription: "Tender, nutritious, reliable supply",
+        tags: ["South India", "Grade A", "Fresh"],
+        featuredImage: {
+            url: "/images/drumsticks.webp",
+            altText: "Fresh Drumsticks"
+        }
+    },
+    {
+        id: 9,
         title: "Dry Coconut",
         handle: "dry-coconut",
         description: "Dry and semi-husk coconut from South India. High-quality produce for wholesale distribution and export.",
@@ -158,7 +134,19 @@ const featuredProduce = [
         }
     },
     {
-        id: 12,
+        id: 10,
+        title: "Black Grapes",
+        handle: "black-grapes",
+        description: "Fresh black grapes from Nashik region. Consistent quality and fair pricing for wholesale distribution.",
+        shortDescription: "Consistent quality, fair wholesale pricing",
+        tags: ["Nashik", "Grade A", "Fresh"],
+        featuredImage: {
+            url: "/images/black_grapes.jpg",
+            altText: "Black Grapes"
+        }
+    },
+    {
+        id: 11,
         title: "Premium Turmeric",
         handle: "premium-turmeric",
         description: "Premium turmeric from Bhopal region. High-quality spice with excellent color and aroma for export markets.",
@@ -167,6 +155,18 @@ const featuredProduce = [
         featuredImage: {
             url: "/images/turmeric.jpg",
             altText: "Premium Turmeric"
+        }
+    },
+    {
+        id: 12,
+        title: "Green Grapes",
+        handle: "green-grapes",
+        description: "Premium green grapes from Nashik. Crisp texture and excellent taste for international markets.",
+        shortDescription: "Crisp texture, premium international grade",
+        tags: ["Nashik", "Grade A", "Premium"],
+        featuredImage: {
+            url: "/images/green_grapes.jpg",
+            altText: "Green Grapes"
         }
     }
 ];

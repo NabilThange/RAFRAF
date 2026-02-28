@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+.wrapper {
+    box-sizing: border-box;
+    color: #222;
+    font-family: "Aboreto", system-ui;
+    font-size: 1.5vmax;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.wrapper * {
+    box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        font-size: 14.4px;
+    }
+}
+
+/* ── STICKY SECTIONS ── */
+.section {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    height: 100vh;
+    padding: 24px 48px;
+    --img-width: 35vmax;
+    --img-height: calc(var(--img-width) * 3 / 4);
+    overflow: hidden;
+    /* clips the parallax drift at section boundary */
+}
+
+.section1 {
+    background-color: #FAFAFA;
+    z-index: 4;
+}
+
+/* cool white */
+.section2 {
+    background-color: #F7F5F2;
+    z-index: 3;
+}
+
+/* warm white */
+.section3 {
+    background-color: #F4F4F6;
+    z-index: 2;
+}
+
+/* blue-tinted white */
+.section4 {
+    background-color: #F5F7F4;
+    z-index: 1;
+}
+
+/* green-tinted white */
+
+/*
+  imgWrap: absolutely positioned, centred vertically.
+  JS applies:
+    transform: translateY(-50%) translateY(-Xpx)  ← parallax drift
+    clip-path: inset(0 0 Y% 0)                    ← wipe out
+
+  The image inside is 120% tall so the parallax upward drift
+  doesn't expose the section background below the image.
+*/
+.imgWrap {
+    position: absolute;
+    top: 50%;
+    right: 48px;
+    transform: translateY(-50%);
+    /* JS overrides this each frame */
+    width: var(--img-width);
+    height: var(--img-height);
+    pointer-events: none;
+    will-change: transform, clip-path;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.img {
+    display: block;
+    width: 100%;
+    /* 120% height gives the parallax room to drift without gaps */
+    height: 120%;
+    margin-top: -10%;
+    /* centre the oversized image */
+    object-fit: cover;
+}
+
+.content {
+    padding-left: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.desc {
+    line-height: 1.7;
+    text-wrap: balance;
+}
+
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+    .wrapper {
+        font-size: 16px;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: 100svh;
+        padding: 0;
+        gap: 0;
+        --img-width: 100%;
+        --img-height: 55vw;
+        overflow: hidden;
+    }
+
+    /* In-flow on mobile, no parallax */
+    .imgWrap {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none !important;
+        /* disable JS parallax on mobile */
+        clip-path: none !important;
+        /* disable JS wipe on mobile */
+        width: 100%;
+        height: 55vw;
+        min-height: 200px;
+        max-height: 50vh;
+        flex-shrink: 0;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+        will-change: auto;
+    }
+
+    .img {
+        height: 100%;
+        margin-top: 0;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .content {
+        flex: 1;
+        padding: 36px 28px 28px;
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+        padding-left: 28px;
+    }
+
+    .title {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .desc {
+        font-size: 17px;
+        line-height: 1.7;
+        text-wrap: balance;
+    }
+}
+
+@media (max-width: 420px) {
+    .imgWrap {
+        height: 48vw;
+    }
+
+    .content {
+        padding: 28px 22px 22px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .desc {
+        font-size: 15px;
+    }
+}

@@ -26,137 +26,107 @@ export function PhilosophySection() {
 
   const updateProgress = useCallback(() => {
     if (!containerRef.current) return;
-    
+
     const rect = containerRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const containerHeight = containerRef.current.offsetHeight;
-    
-    // Pin starts when top hits top of viewport
-    // Pin ends after scrolling through 4x viewport height
+
     const pinDuration = windowHeight * 4;
     const scrolled = -rect.top;
     const progress = Math.max(0, Math.min(1, scrolled / pinDuration));
-    
+
     setScrollProgress(progress);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(updateProgress);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateProgress();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [updateProgress]);
 
   const renderAnimatedText = () => {
-    const allWords: Array<{ word: string; isKeyword: boolean; paragraphIndex: number; wordIndex: number }> = [];
-    
-    paragraphs.forEach((paragraph, pIndex) => {
-      const words = paragraph.split(/\s+/);
-      words.forEach((word, wIndex) => {
+    const allWords: Array<{ word: string; isKeyword: boolean }> = [];
+
+    paragraphs.forEach((paragraph) => {
+      paragraph.split(/\s+/).forEach((word) => {
         if (word.trim()) {
-          const normalizedWord = word.toLowerCase().replace(/[.,!?;:"—]/g, "");
-          const isKeyword = keywords.includes(normalizedWord);
-          allWords.push({ word, isKeyword, paragraphIndex: pIndex, wordIndex: wIndex });
+          const normalized = word.toLowerCase().replace(/[.,!?;:"—]/g, "");
+          allWords.push({ word, isKeyword: keywords.includes(normalized) });
         }
       });
     });
 
     const totalWords = allWords.length;
     const overlapWords = 15;
-    const reverseOverlapWords = 5;
+
+    // Only use the reveal phase — clamp progress to 0→1 over full scroll
+    // Once a word is revealed it stays revealed forever
+    const revealProgress = Math.min(1, scrollProgress / 1);
+
+    let globalWordIndex = 0;
 
     return (
       <div className="space-y-8">
         {paragraphs.map((paragraph, pIndex) => {
           const words = paragraph.split(/\s+/);
-          let globalWordIndex = 0;
-          
-          // Calculate starting index for this paragraph
-          for (let i = 0; i < pIndex; i++) {
-            globalWordIndex += paragraphs[i].split(/\s+/).filter(w => w.trim()).length;
-          }
+          const startIndex = globalWordIndex;
+          globalWordIndex += words.filter(w => w.trim()).length;
 
           return (
-            <p key={pIndex} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
+            <p
+              key={pIndex}
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center"
+            >
               {words.map((word, wIndex) => {
                 if (!word.trim()) return null;
-                
-                const index = globalWordIndex + wIndex;
-                const normalizedWord = word.toLowerCase().replace(/[.,!?;:"—]/g, "");
-                const isKeyword = keywords.includes(normalizedWord);
 
-                let wordOpacity = 0;
-                let bgOpacity = 0;
-                let textOpacity = 0;
+                const index = startIndex + wIndex;
+                const normalized = word.toLowerCase().replace(/[.,!?;:"—]/g, "");
+                const isKeyword = keywords.includes(normalized);
 
-                if (scrollProgress <= 0.7) {
-                  // Reveal phase (0 to 0.7)
-                  const progressTarget = 0.7;
-                  const revealProgress = Math.min(1, scrollProgress / progressTarget);
+                // Word reveal timing
+                const totalAnimationLength = 1 + overlapWords / totalWords;
+                const wordStart = index / totalWords;
+                const wordEnd = wordStart + overlapWords / totalWords;
+                const timelineScale = 1 / Math.min(
+                  totalAnimationLength,
+                  1 + (totalWords - 1) / totalWords + overlapWords / totalWords
+                );
 
-                  const totalAnimationLength = 1 + overlapWords / totalWords;
-                  const wordStart = index / totalWords;
-                  const wordEnd = wordStart + overlapWords / totalWords;
-                  const timelineScale = 1 / Math.min(totalAnimationLength, 1 + (totalWords - 1) / totalWords + overlapWords / totalWords);
+                const adjustedStart = wordStart * timelineScale;
+                const adjustedEnd = wordEnd * timelineScale;
+                const duration = adjustedEnd - adjustedStart;
 
-                  const adjustedStart = wordStart * timelineScale;
-                  const adjustedEnd = wordEnd * timelineScale;
-                  const duration = adjustedEnd - adjustedStart;
-
-                  const wordProgress = 
-                    revealProgress <= adjustedStart ? 0 :
+                const wordProgress =
+                  revealProgress <= adjustedStart ? 0 :
                     revealProgress >= adjustedEnd ? 1 :
-                    (revealProgress - adjustedStart) / duration;
+                      (revealProgress - adjustedStart) / duration;
 
-                  wordOpacity = wordProgress;
+                // Opacity of the whole word span
+                const wordOpacity = wordProgress;
 
-                  const backgroundFadeStart = wordProgress >= 0.9 ? (wordProgress - 0.9) / 0.1 : 0;
-                  bgOpacity = Math.max(0, 1 - backgroundFadeStart);
+                // Background pill fades IN then stays — no fade out
+                const bgFadeInProgress = Math.min(1, wordProgress / 0.9);
+                const bgOpacity = isKeyword ? 0 : 0; // bg only on non-keywords during reveal
+                // For the dark pill behind each word: appears then disappears as text becomes clear
+                const pillOpacity = wordProgress < 0.9
+                  ? wordProgress
+                  : Math.max(0, 1 - (wordProgress - 0.9) / 0.1);
 
-                  const textRevealThreshold = 0.9;
-                  const textRevealProgress = wordProgress >= textRevealThreshold
-                    ? (wordProgress - textRevealThreshold) / (1 - textRevealThreshold)
-                    : 0;
-                  textOpacity = Math.pow(textRevealProgress, 0.5);
-                } else {
-                  // Reverse phase (0.7 to 1.0)
-                  const reverseProgress = (scrollProgress - 0.7) / 0.3;
-                  wordOpacity = 1;
-                  const targetTextOpacity = 1;
-
-                  const reverseWordStart = index / totalWords;
-                  const reverseWordEnd = reverseWordStart + reverseOverlapWords / totalWords;
-                  const reverseTimelineScale = 1 / Math.max(1, (totalWords - 1) / totalWords + reverseOverlapWords / totalWords);
-
-                  const reverseAdjustedStart = reverseWordStart * reverseTimelineScale;
-                  const reverseAdjustedEnd = reverseWordEnd * reverseTimelineScale;
-                  const reverseDuration = reverseAdjustedEnd - reverseAdjustedStart;
-
-                  const reverseWordProgress = 
-                    reverseProgress <= reverseAdjustedStart ? 0 :
-                    reverseProgress >= reverseAdjustedEnd ? 1 :
-                    (reverseProgress - reverseAdjustedStart) / reverseDuration;
-
-                  if (reverseWordProgress > 0) {
-                    textOpacity = targetTextOpacity * (1 - reverseWordProgress);
-                    bgOpacity = reverseWordProgress;
-                  } else {
-                    textOpacity = targetTextOpacity;
-                    bgOpacity = 0;
-                  }
-                }
+                // Text colour reveal — once word is fully in, text is clear and stays
+                const textRevealThreshold = 0.9;
+                const textRevealProgress = wordProgress >= textRevealThreshold
+                  ? (wordProgress - textRevealThreshold) / (1 - textRevealThreshold)
+                  : 0;
+                const textOpacity = Math.pow(textRevealProgress, 0.5);
 
                 return (
                   <span
@@ -164,15 +134,13 @@ export function PhilosophySection() {
                     className={`inline-block relative mr-1 mb-1 px-1 py-0.5 rounded-full ${isKeyword ? 'mx-2' : ''}`}
                     style={{
                       opacity: wordOpacity,
-                      backgroundColor: `rgba(60, 60, 60, ${bgOpacity})`,
+                      backgroundColor: `rgba(60, 60, 60, ${pillOpacity})`,
                       willChange: 'background-color, opacity',
                     }}
                   >
                     <span
                       className={`relative ${isKeyword ? 'inline-block px-2 py-1 text-background' : ''}`}
-                      style={{
-                        opacity: textOpacity,
-                      }}
+                      style={{ opacity: textOpacity }}
                     >
                       {isKeyword && (
                         <span
@@ -194,8 +162,8 @@ export function PhilosophySection() {
 
   return (
     <section id="products" className="bg-background">
-      <div 
-        ref={containerRef} 
+      <div
+        ref={containerRef}
         className="relative"
         style={{ height: `${100 + 400}vh` }}
       >
